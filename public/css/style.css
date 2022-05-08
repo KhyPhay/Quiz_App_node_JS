@@ -9,24 +9,19 @@ body {
  }
  /* ------------------------------Menu--------------------- */
  
- nav {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     box-shadow:0 1px 0.5rem black;
-     background-color: rgb(231, 224, 224);
-     position: sticky;
-     top: -5px;
- }
- 
+#navbar-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:0 1px 0.5rem black;
+    position: sticky;
+    top: -5px;
+}
+
  ul img {
      margin-left: 30px;
     width: 15px;
  }
-.search {
-    width: 300px;
-}
-
  ul>h3 {
      margin-left: 8px;
      margin-top: 10px;
@@ -50,6 +45,9 @@ body {
 #no-data div img {
     margin: auto;
 
+}
+.search{
+    min-width: 300px;
 }
 .control-img img {
     width: 200px;
@@ -93,20 +91,15 @@ body {
  }
  
  ul li:hover {
-     background-color: #2196F3;
+     color: #fff;
      border: none;
  }
- 
- .active {
-     background-color: #2196F3;
-     color: white;
- }
- 
+  
  ul h2 {
      margin-top: 5px;
  }
  /* play quiz */
- .play-quiz,.create-quiz{
+ .play-quiz, .create-quiz{
      border-top: 8px solid #f5c20b;
      width: 35%;
      height: 60vh;
@@ -323,20 +316,7 @@ body {
  
  .actions img {
      width: 30%;
- }
- 
- .answers {
-     width: 75%;
-     margin: auto;
-     /* display: flex;
-            flex-direction: column;
-            margin-left: 13%; */
-     display: grid;
-     gap: 1rem;
-     grid-template-columns: auto auto;
-     padding: 10px;
- }
- 
+ } 
  .answerDisplay {
      background: rgb(240, 3, 3);
      border-radius: 5px;
@@ -391,10 +371,6 @@ color: white;
 }
  
 
-.control-one-quiz{
-     width: 29% ;
-     margin-bottom: 0.5rem;
-}
 #quiz, #myquiz{
     margin-top: 0.5rem;
     width: 100%;
@@ -403,6 +379,10 @@ color: white;
     box-sizing: border-box;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.control-one-quiz{
+     width: 29% ;
+     margin-bottom: 0.5rem;
 }
 #back-from-show-correction, .back-from-noquestion {
     font-size: 20px;
@@ -429,9 +409,7 @@ color: white;
     background: rgb(228, 184, 8);
 }
 .back-btn-correction{
-    margin-top: 1rem;
-    width: 11%;
-   
+    margin-top: 1rem;   
 }
 #back-from-show-correction:hover{
     background: rgb(8, 162, 228);
@@ -466,11 +444,12 @@ color: white;
     width: 99%;
 }
  .answers {
+     margin: auto;
      display: grid;
      grid-template-columns: auto auto;
      gap: 10px;
      margin-top: 3rem;
-    
+     width: 75%;
  }
  
 .grid-item {
@@ -552,7 +531,7 @@ color: white;
 
  .btn-find-quiz{
      background: rgb(228, 184, 8);
-     width: 12%;
+     /* width: %; */
  }
  .btn-find-quiz:hover{
      background: rgb(227, 221, 210);
@@ -642,14 +621,11 @@ color: white;
     background: rgba(228, 233, 220, 0.939);
     border: none;
     width: 95%;
-   
-
 }
 .show-title-quiz .hr{
     height: 2px;
     background: #000;
     width: 95%;
-
 }
 .btn-cancel-quiz{
     text-decoration: none;
@@ -657,7 +633,6 @@ color: white;
     background: rgb(96, 96, 96);
     padding: 0.7rem 1rem;
     margin-top: 1rem;
-
 }
 .btn-cancel-quiz:hover{
     text-decoration: none;
@@ -697,7 +672,20 @@ color: white;
     font-size: 1.3rem;
 }
 
-
+show-edit-quiz{
+    background: rgba(244, 237, 237, 0.711);
+    margin-top: 2rem;
+    border-top: 5px solid rgb(222, 205, 14);
+    border-radius: 7px;
+}
+.show-edit-quiz .hr{
+    width: 95%;
+    height: 2px;
+    background: #000;
+}
+.show-edit-quiz .btn-edit-quiz{
+    background: rgb(248, 205, 13);
+}
 
 
 
@@ -711,7 +699,62 @@ color: white;
 
 
  @media (max-width: 768px) {
-     .create-question {
-         width: 100%;
-     }
+    .create-question {
+        width: 100%;
+    }
+    .contain-link{
+        display: block;
+    }
+    .play-quiz, .create-quiz{
+        margin: auto;
+        border-top: 8px solid #f5c20b;
+        width: 70%;
+        height: 60vh;
+        margin-top: 1rem;
+        background: rgba(244, 237, 237, 0.711);
+        padding: 1rem;
+        border-radius: 7px;
+        box-shadow:0 2px 0.3rem black;
+        
+    }
+    .contain-question{
+        width: 100%;
+    }
+    .answers {
+        margin: auto;   
+        display: block;
+        padding: 10px;
+        width: 100%;
+    }
+    .grid-item{
+        height: 90px;
+        width: 95%;
+    }
+    .control-one-quiz{
+        width: 45% ;
+        margin-bottom: 0.5rem;
+   }
+   .container{
+       width: 100%;
+   }
+   #quiz, #myquiz{
+    margin-top: 0.5rem;
+    width: 100%;
+    display: block;   
+    padding: 0px;
+    }
+    .control-one-quiz{
+        width: 90%;
+        margin:10px 0 ;
+    }
+    #show-good-bad-answers div{
+        width: 100%;
+    }
+    .show-title-quiz{
+        border-radius: 0;
+        margin-top: 5px;
+    }
+    .logo-title{
+        display: none;
+    }
  }
